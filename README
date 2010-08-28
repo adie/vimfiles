@@ -1,0 +1,6 @@
+My vim files
+============
+
+This should be in the ~/.vim directory.
+
+Don't forget to copy .vimrc to the user homedir.
