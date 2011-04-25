@@ -1,4 +1,20 @@
-call pathogen#runtime_append_all_bundles()
+"migrating from pathogen to vundle
+"call pathogen#runtime_append_all_bundles()
+
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tomtom/tlib_vim'
+Bundle 'tomtom/tcomment_vim'
+
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
 filetype plugin on
