@@ -1,6 +1,3 @@
-"migrating from pathogen to vundle
-"call pathogen#runtime_append_all_bundles()
-
 set rtp+=~/.vim/vundle/
 call vundle#rc()
 
@@ -14,6 +11,10 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'garbas/vim-snipmate'
+Bundle 'pangloss/vim-javascript'
 
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
@@ -28,17 +29,17 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
- 
+
 " alt+n or alt+p to navigate between entries in QuickFix
 map <silent> <m-p> :cp <cr>
 map <silent> <m-n> :cn <cr>
- 
+
 nmap <silent> <C-i> i<CR><Esc>
 nmap <silent> <C-a> a<CR><Esc>
 
 " Change which file opens after executing :Rails command
 let g:rails_default_file='config/routes.rb'
- 
+
 syntax enable
 syntax on
 
@@ -59,7 +60,7 @@ set nu  " Line numbers on
 set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 colorscheme slate  " Uncomment this to set a default theme
- 
+
 " Formatting (some of these are for coding in C and C++)
 set ts=2  " Tabs are 2 spaces
 set bs=2  " Backspace over everything in insert mode
@@ -72,7 +73,7 @@ set cindent
 set autoindent
 set smarttab
 set expandtab
- 
+
 " Visual
 set showmatch  " Show matching brackets.
 set mat=5  " Bracket blinking.
@@ -82,7 +83,7 @@ set lcs=tab:\ \ ,trail:~,extends:>,precedes:<
 set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
- 
+
 " gvim specific
 set mousehide  " Hide mouse after chars typed
 set mouse=a  " Mouse in all modes
