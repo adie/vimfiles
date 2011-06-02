@@ -15,6 +15,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'garbas/vim-snipmate'
 Bundle 'pangloss/vim-javascript'
+Bundle 'adie/BlockDiff'
 
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
