@@ -16,6 +16,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'garbas/vim-snipmate'
 Bundle 'pangloss/vim-javascript'
 Bundle 'adie/BlockDiff'
+Bundle 'csexton/rvm.vim'
 
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
@@ -97,7 +98,6 @@ set directory=~/.vim/tmp     " Where temporary files will go.
 set wrapscan
 set ch=2
 
-set laststatus=2
 set timeoutlen=500
 set history=100
 
@@ -113,3 +113,5 @@ set ignorecase
 set wrap
 
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчняж;abcdefghijklmnopqrstuvwxyz;
+
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
