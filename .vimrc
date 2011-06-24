@@ -17,6 +17,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'pangloss/vim-javascript'
 Bundle 'adie/BlockDiff'
 Bundle 'csexton/rvm.vim'
+Bundle 'godlygeek/tabular'
 
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
