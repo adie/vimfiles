@@ -5,9 +5,9 @@ This should be in the ~/.vim directory.
 
 To install:
 
-1 Link (or copy) .vimrc and .gvimrc to the user homedir.
+1. Link (or copy) .vimrc and .gvimrc to the user homedir.
 
-2 Run vim (not gvim)
+2. Run vim (not gvim)
 
-3 Execute :BundleInstall to fetch and install plugins (using Vundle)
+3. Execute :BundleInstall to fetch and install plugins (using Vundle)
 
