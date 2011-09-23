@@ -1,5 +1,10 @@
-set rtp+=~/.vim/vundle/
+set nocompatible  " be iMproved
+filetype off      " Required!
+
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
+Bundle 'gmarik/vundle'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-endwise'
@@ -19,10 +24,7 @@ Bundle 'adie/BlockDiff'
 Bundle 'csexton/rvm.vim'
 Bundle 'godlygeek/tabular'
 
-filetype on  " Automatically detect file types.
-set nocompatible  " We don't want vi compatibility.
-filetype plugin on
-filetype indent on
+filetype plugin indent on " Required!
 
 " Add recently accessed projects menu (project plugin)
 set viminfo^=!
