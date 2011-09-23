@@ -7,7 +7,9 @@ To install:
 
 1. Link (or copy) .vimrc and .gvimrc to the user homedir.
 
-2. Run vim (not gvim)
+2. Install Vundle: `git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
 
-3. Execute :BundleInstall to fetch and install plugins (using Vundle)
+3. Run `vim` (not gvim)
+
+4. Execute :BundleInstall to fetch and install plugins
 
