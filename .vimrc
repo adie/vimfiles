@@ -14,6 +14,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-repeat'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'Raimondi/delimitMate'
@@ -24,6 +25,10 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'adie/BlockDiff'
 Bundle 'csexton/rvm.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'wincent/Command-T'
+Bundle 'scrooloose/syntastic'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'skammer/vim-css-color'
 
 filetype plugin indent on " Required!
 
@@ -119,3 +124,7 @@ set wrap
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчняж;abcdefghijklmnopqrstuvwxyz;
 
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
+set wildignore+=vendor/ruby/*,.git
+
+let g:ragtat_global_maps=1

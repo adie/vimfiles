@@ -1,3 +1,3 @@
-set columns=128
-set lines=40
+set columns=999
+set lines=999
 set go=ac
