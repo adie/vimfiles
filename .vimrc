@@ -35,6 +35,9 @@ filetype plugin indent on " Required!
 " Add recently accessed projects menu (project plugin)
 set viminfo^=!
 
+" Command-T options
+let g:CommandTMaxFiles=20000
+
 " Minibuffer Explorer Settings
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
