@@ -128,6 +128,6 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-set wildignore+=vendor/ruby/*,.git
+set wildignore+=vendor/ruby/*,.git,tmp/*,public/system/*
 
 let g:ragtat_global_maps=1
