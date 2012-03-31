@@ -15,6 +15,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-afterimage'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'Raimondi/delimitMate'
@@ -29,6 +30,10 @@ Bundle 'wincent/Command-T'
 Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'skammer/vim-css-color'
+Bundle 'bbommarito/vim-slim'
+Bundle 'vim-scripts/CSSMinister'
+
+let g:CommandTMaxFiles=100000
 
 filetype plugin indent on " Required!
 
@@ -126,8 +131,10 @@ set wrap
 
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчняж;abcdefghijklmnopqrstuvwxyz;
 
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%{exists('g:loaded_rvm')?rvm#statusline():''}%#warningmsg#%{SyntasticStatuslineFlag()}%*%=%-16(\ %l,%c-%v\ %)%P
 
 set wildignore+=vendor/ruby/*,.git,tmp/*,public/system/*
 
 let g:ragtat_global_maps=1
+
+hi PreProc guifg=red ctermfg=red guibg=grey15
