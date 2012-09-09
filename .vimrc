@@ -32,6 +32,14 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'skammer/vim-css-color'
 Bundle 'bbommarito/vim-slim'
 Bundle 'vim-scripts/CSSMinister'
+Bundle 'othree/html5.vim'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'groenewege/vim-less'
+Bundle 'greyblake/vim-preview'
+
+Bundle 'mileszs/ack.vim'
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 let g:CommandTMaxFiles=100000
 
@@ -133,8 +141,17 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%{exists('g:loaded_rvm')?rvm#statusline():''}%#warningmsg#%{SyntasticStatuslineFlag()}%*%=%-16(\ %l,%c-%v\ %)%P
 
-set wildignore+=vendor/ruby/*,.git,tmp/*,public/system/*
+set wildignore+=vendor/ruby/*,.git,tmp/*,public/system/*,doc/*
 
 let g:ragtat_global_maps=1
 
 hi PreProc guifg=red ctermfg=red guibg=grey15
+
+" File type associations
+au BufRead,BufNewFile *.rabl setf ruby
+au BufRead,BufNewFile *.thor setf ruby
+au BufRead,BufNewFile *.hamlc setf haml
+
+" Support rspec in all projects
+autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
+highlight def link rubyRspec Function
