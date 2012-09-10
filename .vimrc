@@ -26,7 +26,6 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'adie/BlockDiff'
 Bundle 'csexton/rvm.vim'
 Bundle 'godlygeek/tabular'
-Bundle 'wincent/Command-T'
 Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'skammer/vim-css-color'
@@ -37,6 +36,8 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
 Bundle 'greyblake/vim-preview'
+Bundle 'gregsexton/gitv'
+Bundle 'kien/ctrlp.vim'
 
 Bundle 'mileszs/ack.vim'
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
@@ -47,9 +48,6 @@ filetype plugin indent on " Required!
 
 " Add recently accessed projects menu (project plugin)
 set viminfo^=!
-
-" Command-T options
-let g:CommandTMaxFiles=20000
 
 " Minibuffer Explorer Settings
 let g:miniBufExplMapWindowNavVim = 1
@@ -141,7 +139,8 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%{exists('g:loaded_rvm')?rvm#statusline():''}%#warningmsg#%{SyntasticStatuslineFlag()}%*%=%-16(\ %l,%c-%v\ %)%P
 
-set wildignore+=vendor/ruby/*,.git,tmp/*,public/system/*,doc/*
+"set wildignore+=vendor/ruby/*,.git,tmp/*,public/system/*,doc/*
+let g:ctrlp_custom_ignore = '\v[\/](vendor/ruby|\.git|tmp|public/system|doc)$'
 
 let g:ragtat_global_maps=1
 
