@@ -7,9 +7,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'scrooloose/nerdtree'
+let g:NERDTreeChDirMode=2 " changing root dir in tree will `cd` the whole vim
+let g:NERDTreeMinimalUI=1
+
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-surround'
@@ -17,36 +20,60 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-afterimage'
+Bundle 'tpope/vim-liquid'
+
 Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'garbas/vim-snipmate'
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 Bundle 'pangloss/vim-javascript'
 Bundle 'adie/BlockDiff'
 Bundle 'csexton/rvm.vim'
 Bundle 'godlygeek/tabular'
+
 Bundle 'scrooloose/syntastic'
 let g:syntastic_html_checkers=[]
 
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'skammer/vim-css-color'
 Bundle 'slim-template/vim-slim'
-Bundle 'vim-scripts/CSSMinister'
-Bundle 'othree/html5.vim'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'hail2u/vim-css3-syntax'
+Bundle 'heartsentwined/vim-emblem'
+
 Bundle 'groenewege/vim-less'
+Bundle 'ap/vim-css-color'
+Bundle 'vim-scripts/CSSMinister'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'othree/html5.vim'
+
 Bundle 'greyblake/vim-preview'
 Bundle 'gregsexton/gitv'
 Bundle 'kien/ctrlp.vim'
+
 Bundle 'jimenezrick/vimerl'
+Bundle 'elixir-lang/vim-elixir'
 
 Bundle 'mileszs/ack.vim'
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
-let g:CommandTMaxFiles=100000
+Bundle 'ngmy/vim-rubocop'
+
+Bundle 'mattn/zencoding-vim'
+let g:user_zen_expandabbr_key='<c-e>'
+let g:use_zen_complete_tag = 1
+
+Bundle 'matchit.zip'
+Bundle 'jgdavey/vim-blockle'
+Bundle 'ecomba/vim-ruby-refactoring'
+
+Bundle 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup=1
+
+Bundle 'ZoomWin'
+" Bundle 'Valloric/YouCompleteMe' " requires Vim 7.3.584+
+
+Bundle 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled=1
 
 filetype plugin indent on " Required!
 
@@ -63,8 +90,8 @@ let g:miniBufExplModSelTarget = 1
 map <silent> <m-p> :cp <cr>
 map <silent> <m-n> :cn <cr>
 
+" ctrl+i breaks line apart
 nmap <silent> <C-i> i<CR><Esc>
-nmap <silent> <C-a> a<CR><Esc>
 
 " Change which file opens after executing :Rails command
 let g:rails_default_file='config/routes.rb'
@@ -144,7 +171,8 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%{exists('g:loaded_rvm')?rvm#statusline():''}%#warningmsg#%{SyntasticStatuslineFlag()}%*%=%-16(\ %l,%c-%v\ %)%P
 
 "set wildignore+=vendor/ruby/*,.git,tmp/*,public/system/*,doc/*
-let g:ctrlp_custom_ignore = '\v[\/](vendor/ruby|\.git|tmp|public/system|doc)$'
+let g:ctrlp_custom_ignore = '\v[\/](vendor/ruby|\.git|tmp|public/system|doc|data|node_modules)$'
+let g:ctrlp_max_files = 1000000
 
 let g:ragtat_global_maps=1
 
@@ -154,7 +182,11 @@ hi PreProc guifg=red ctermfg=red guibg=grey15
 au BufRead,BufNewFile *.rabl setf ruby
 au BufRead,BufNewFile *.thor setf ruby
 au BufRead,BufNewFile *.hamlc setf haml
+au BufRead,BufNewFile *.ract setf html
 
 " Support rspec in all projects
 autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
 highlight def link rubyRspec Function
+
+" Remove all trailing whitespace
+au BufWritePre * :%s/\s\+$//e
